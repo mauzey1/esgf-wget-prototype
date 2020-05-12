@@ -74,7 +74,7 @@ def generate_wget_script(request):
     current_datetime = datetime.datetime.now()
     timestamp = current_datetime.strftime("%Y/%m/%d %H:%M:%S")
 
-    context = dict(timestamp=timestamp, datasets=dataset_id_list, files=file_list)
+    context = dict(timestamp=timestamp, files=file_list)
     wget_script = render(request, 'wget-template.sh', context)
 
     script_filename = current_datetime.strftime("wget-%Y%m%d%H%M%S.sh")
