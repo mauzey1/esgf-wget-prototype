@@ -7,3 +7,12 @@ SECRET_KEY = ''
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+# Address of ESGF Solr
+ESGF_SOLR_URL = ''
+
+# Solr file shards
+ESGF_SOLR_SHARDS = []
+
+# Maximum number of files allowed in a wget script
+WGET_SCRIPT_FILE_LIMIT = 1000
