@@ -351,7 +351,8 @@ echo "Running $(basename $0) version: $version"
 echo "Use $(basename $0) -h for help."$'\n'
 
 cat <<'EOF-MESSAGE'
-Script created for {{ files|length }} file(s)
+{% if warning_message %}{{ warning_message }}
+{% endif %}Script created for {{ files|length }} file(s)
 (The count won't match if you manually edit this file!)
 
 EOF-MESSAGE
