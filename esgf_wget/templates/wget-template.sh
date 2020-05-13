@@ -24,8 +24,9 @@ search_url='{{request.build_absolute_uri}}'
 
 #These are the embedded files to be downloaded
 download_files="$(cat <<EOF--dataset.file.url.chksum_type.chksum
-{% for file in files %}'{{file.filename}}' '{{file.url}}' '{{file.checksum_type}}' '{{file.checksum}}'
-{% endfor %}EOF--dataset.file.url.chksum_type.chksum
+{% spaceless %}{% for file in files %}'{{file.filename}}' '{{file.url}}' '{{file.checksum_type}}' '{{file.checksum}}'
+{% endfor %}{% endspaceless %}
+EOF--dataset.file.url.chksum_type.chksum
 )"
 
 check_os() {
