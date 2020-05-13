@@ -74,6 +74,6 @@ def generate_wget_script(request):
 
     script_filename = current_datetime.strftime("wget-%Y%m%d%H%M%S.sh")
 
-    response = HttpResponse(wget_script, content_type='text/plain')
+    response = HttpResponse(wget_script, content_type='text/x-sh')
     response['Content-Disposition'] = 'attachment; filename={}'.format(script_filename)
     return response
